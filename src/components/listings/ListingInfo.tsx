@@ -3,10 +3,11 @@
 import dynamic from 'next/dynamic'
 import { IconType } from 'react-icons'
 
+import useCountries from '@/hooks/useCountries'
+import { SafeUser } from '@/types'
+
 import Avatar from '../Avatar'
 import ListingCategory from './ListingCategory'
-import { SafeUser } from '@/types'
-import useCountries from '@/hooks/useCountries'
 
 const Map = dynamic(() => import('../Map'), {
 	ssr: false
@@ -36,7 +37,7 @@ const ListingInfo = ({
 	bathroomCount,
 	category,
 	locationValue
-}:ListingInfoProps) => {
+}: ListingInfoProps) => {
 	const { getByValue } = useCountries()
 
 	const coordinates = getByValue(locationValue)?.latlng

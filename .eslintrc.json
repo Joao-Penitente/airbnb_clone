@@ -12,8 +12,7 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
-        "plugin:@next/next/recommended"
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -25,7 +24,6 @@
     },
     "plugins": [
         "react",
-        "next",
         "@typescript-eslint",
         "react-hooks",
         "import-helpers"
