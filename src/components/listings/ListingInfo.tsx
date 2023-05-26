@@ -1,3 +1,4 @@
+'use client'
 import dynamic from 'next/dynamic'
 import { IconType } from 'react-icons'
 
@@ -7,6 +8,9 @@ import { SafeUser } from '@/types'
 import Avatar from '../Avatar'
 import ListingCategory from './ListingCategory'
 
+const Map = dynamic(() => import('../Map'), {
+	ssr: false
+})
 interface ListingInfoProps {
 	user: SafeUser
 	description: string
@@ -14,18 +18,12 @@ interface ListingInfoProps {
 	guestCount: number
 	bathroomCount: number
 	locationValue: string
-	category:
-		| {
-				icon: IconType
-				label: string
-				description: string
-		  }
-		| undefined
+	category: {
+        icon: IconType,
+        label: string;
+        description: string;
+      } | undefined
 }
-
-const Map = dynamic(() => import('../Map'), {
-	ssr: false
-})
 
 const ListingInfo = ({
 	user,
